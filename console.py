@@ -69,7 +69,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_EOF(self, line):
-   
+
         return True
 
     def do_create(self, line):
@@ -95,7 +95,7 @@ class HBNBCommand(cmd.Cmd):
         print(d[key])
 
     def do_destroy(self, line):
-        
+
         if (self.my_errors(line, 2) == 1):
             return
         args = line.split()
