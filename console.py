@@ -65,11 +65,11 @@ class HBNBCommand(cmd.Cmd):
         return False
 
     def do_quit(self, line):
-        
+
         return True
 
     def do_EOF(self, line):
-        
+   
         return True
 
     def do_create(self, line):
@@ -84,7 +84,7 @@ class HBNBCommand(cmd.Cmd):
         print(obj.id)
 
     def do_show(self, line):
-        
+
         if (self.my_errors(line, 2) == 1):
             return
         args = line.split()
@@ -107,7 +107,7 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def do_all(self, line):
-        
+
         d = storage.all()
         if not line:
             print([str(x) for x in d.values()])
@@ -119,7 +119,7 @@ class HBNBCommand(cmd.Cmd):
                if v.__class__.__name__ == args[0]])
 
     def do_update(self, line):
-    
+
         if (self.my_errors(line, 4) == 1):
             return
         args = line.split()
@@ -148,7 +148,7 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def my_count(self, class_n):
-        
+
         count_instance = 0
         for instance_object in storage.all().values():
             if instance_object.__class__.__name__ == class_n:
@@ -156,7 +156,7 @@ class HBNBCommand(cmd.Cmd):
         print(count_instance)
 
     def default(self, line):
-     
+
         names = ["BaseModel", "User", "State", "City", "Amenity",
                  "Place", "Review"]
 
